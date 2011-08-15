@@ -1,0 +1,8 @@
+.Python
+bin/*
+build/*
+include/*
+lib/*
+lib64
+man/*
+src/*
