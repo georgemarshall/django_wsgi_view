@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include, url
+from django.views.decorators.csrf import csrf_exempt
 from ladon.server.wsgi import LadonWSGIApplication
 from twod.wsgi import make_wsgi_view
 
@@ -26,7 +27,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^api/rpc(/.*)$', make_wsgi_view(ladon_application)),
+    url(r'^api/rpc(/.*)$', csrf_exempt(make_wsgi_view(ladon_application))),
     url(r'^wsgi(/.*)$', make_wsgi_view(wsgi_application)),
 )
 
