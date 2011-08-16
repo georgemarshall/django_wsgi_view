@@ -4,5 +4,5 @@ nose
 Paste
 PasteDeploy
 WebOb
--e ladon
--e twod.wsgi
+ladon
+-e git+git://github.com/2degrees/twod.wsgi.git#egg=twod.wsgi
