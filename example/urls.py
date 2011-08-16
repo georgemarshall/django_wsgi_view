@@ -1,5 +1,4 @@
 from __future__ import absolute_import
-import os
 
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include, url
@@ -12,10 +11,9 @@ from twod.wsgi import make_wsgi_view
 
 from .wsgi import application as wsgi_application
 
-scriptdir = os.path.dirname(os.path.abspath(__file__))
 service_modules = ['webservice']
 
-ladon_application = LadonWSGIApplication(service_modules, [scriptdir], client_root_path='/api/rpc')
+ladon_application = LadonWSGIApplication(service_modules, [settings.BASE], client_root_path='/api/rpc')
 
 urlpatterns = patterns('',
     # Examples:
