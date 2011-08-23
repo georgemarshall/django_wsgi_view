@@ -14,7 +14,7 @@ from .wsgi import application as wsgi_application
 
 service_modules = ['webservice']
 
-ladon_application = LadonWSGIApplication(service_modules, [settings.BASE], client_root_path='/api/rpc')
+ladon_application = LadonWSGIApplication(service_modules, [settings.BASE])
 
 urlpatterns = patterns('',
     # Examples:
